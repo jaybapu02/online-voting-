@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Online Voting System</h1>
+        <div id="timer" class="timer"></div>
+
+        <label for="voterId">Enter your 6-character Voter ID:</label>
+        <input type="text" id="voterId" maxlength="6" placeholder="E.g., ABC123">
+
+        <div class="buttons">
+            <button onclick="submitVoterId()">Submit Voter ID</button>
+            <button onclick="openAddVoterId()">Add Voter ID</button>
+            <button onclick="exitVoting()">Exit</button>
+        </div>
+
+        <div id="status" class="status"></div>
+
+        <!-- Modal for voting -->
+        <div id="voteModal" class="modal">
+            <div class="modal-content">
+                <h2>Cast Your Vote</h2>
+                <div id="candidates"></div>
+                <button onclick="closeVoteModal()">Cancel</button>
+            </div>
+        </div>
+
+        <!-- Modal for adding new voter ID -->
+        <div id="addVoterModal" class="modal">
+            <div class="modal-content">
+                <h2>Add New Voter ID</h2>
+                <input type="text" id="newVoterId" maxlength="6" placeholder="New Voter ID">
+                <button onclick="addNewVoterId()">Add ID</button>
+                <button onclick="closeAddVoterModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
